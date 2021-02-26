@@ -24,7 +24,7 @@ public class ExercicioQuatro {
 			System.out.printf("O número %d é impar !!", numero);
 			System.out.println("Ele elevado a quadrado é " + Math.pow(numero,2));
 		}
-		
+		ler.close();
 
 	}
 
