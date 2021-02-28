@@ -1,3 +1,4 @@
+package EXEMPLOSED;
 
 public class MaePai {
 

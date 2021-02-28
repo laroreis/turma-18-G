@@ -1,3 +1,4 @@
+package EXEMPLOSED;
 
 public class Variaveis {
 	//5 Tipos de variaveis

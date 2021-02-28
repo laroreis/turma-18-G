@@ -1,7 +1,7 @@
-package LISTADOIS;
+package EXEMPLOSED;
 
 import java.util.Scanner;
-
+ // Exemplo de Switch
 public class ExemploSe {
 
 	public static void main(String[] args) {

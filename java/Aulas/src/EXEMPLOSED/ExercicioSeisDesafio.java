@@ -1,4 +1,4 @@
-package LISTADOIS;
+package EXEMPLOSED;
 
 import java.util.Scanner;
 

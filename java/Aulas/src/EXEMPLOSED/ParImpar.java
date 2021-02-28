@@ -1,4 +1,4 @@
-package LISTADOIS;
+package EXEMPLOSED;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class ParImpar {
 		// %d - numero inteiro - tipo int
 		// %s - tipo string - tipo cadeia de caractere
 		// %f - tipo real - tipo double -- %.2f para 2 casas decimais
-		
+		ler.close();
 	}
 
 }

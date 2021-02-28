@@ -1,3 +1,4 @@
+package EXEMPLOSED;
 import java.util.Scanner;
 
 public class EntradaeSaida {
@@ -12,7 +13,8 @@ public class EntradaeSaida {
 		b = ler.nextInt();
 		soma = a+b;
 		System.out.println("A soma foi de: " + soma);
-		
+		ler.close();
 	}
+
 
 }
