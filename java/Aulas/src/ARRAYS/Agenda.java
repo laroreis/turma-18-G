@@ -41,6 +41,7 @@ public class Agenda {
 			}
 		}
 		System.out.printf("\nVocê tem %d de atividades nesse mês", atividade);
+		ler.close();
 	}
 
 }
