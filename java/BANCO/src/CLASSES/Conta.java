@@ -4,7 +4,7 @@ public class Conta {
 	//atributos segurança total
 	private int numero;
 	private String cpf;
-	private double saldo;
+	protected double saldo;
 	private boolean ativa;
 	
 	//contrutor mesmo nome da classe
