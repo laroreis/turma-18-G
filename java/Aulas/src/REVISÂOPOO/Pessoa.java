@@ -22,7 +22,7 @@ public class Pessoa {
 	private boolean vivo;
 	private char genero;
 	
-	//construdor
+	//construtor
 	public Pessoa(String nome) {
 		super(); //classe 0
 		this.nome = nome;
