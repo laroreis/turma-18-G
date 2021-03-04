@@ -39,7 +39,7 @@ public class Teste {
 		
 		contaTeste.movimento();
 		
-		char continua = '0'; // loop das movimentações
+		char continua; // loop das movimentações
 		
 		do {
 			double valor;
@@ -61,7 +61,7 @@ public class Teste {
 			
 			System.out.println("Deseja continuar as movimentações? 1 - Sim / 2 - Não.");
 			continua = ler.next().charAt(0);
-			}while (continua == 2);
+			}while (continua == '1');
 		
 		//fim
 		System.out.println("Saldo atual da conta:" + contaTeste.getSaldo());
