@@ -37,30 +37,58 @@ public class ContaEspecial extends Conta {
 		this.limite = limite;
 	}
 	
+	//metodo
+	
 	public void movimento() {
-		int movimentacao;
 		System.out.println("Vamos começar a movimentação da Conta Especial!");
 		System.out.println("Você tem direito a 10 movimentações sendo interrompido quando zera o limite da sua conta!");
 		System.out.println();
-		System.out.println("Seu saldo: R$ " + super.getSaldo());
-		System.out.println("Você pode: [D-> DÉBITO] [C-> CRÉDITO] Você tem o limite: " + limite);
+		System.out.println("seu saldo é:" + super.getSaldo());
+		System.out.println("Você tem o limite disponivel: " + this.limite);
+		System.out.println("Você pode: [D-> DÉBITO] [C-> CRÉDITO]: ");
 	}
 	
-	//override
-	@Override
-	public void debito (double valor)  // só vai ter debito se tiver saldo
-	{
-		if (this.saldo>= valor) {
-			this.saldo = this.saldo - valor;
+		 
+		@Override
+		public double getSaldo() {
+			return super.getSaldo();
 		}
 		
-	}
-	
 		
-		public void usarLimite (double valor) {
+	/*	//override
+		@Override
+		public void credito(double valor) {
+			this.saldo = this.saldo + valor;
+		}*/
+		
+		@Override
+		public void debito (double valor)  // só vai ter debito se tiver saldo
+		{
+			if (this.saldo>= valor) {
+				this.saldo = this.saldo - valor;
+			}
+			else if  (super.getSaldo() < valor &&  valor <= (super.getSaldo() + limite))
+				{
+					System.out.println("/nVocê está usando o limite da conta Especial.");
+					double dif = 0.00;
+					dif = valor - super.getSaldo();
+					
+					limite = limite - dif;
+					super.credito(dif);
+					
+					System.out.printf("Saque de R$ %.2f. \n", valor);
+					System.out.printf("Saldo R$ %.2f \n", super.getSaldo());
+					
+				}
 			
-			if (valor > super.getSaldo() && valor <= (super.getSaldo() + limite)) {
-				System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
+			
+		}
+
+		/*public void usarLimite (double valor) {
+			
+			if  (super.getSaldo() < valor &&  valor <= (super.getSaldo() + limite))
+			{
+				System.out.println("/nSeu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
 				double dif = 0.00;
 				dif = valor - super.getSaldo();
 				
@@ -69,27 +97,16 @@ public class ContaEspecial extends Conta {
 				
 				System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 				System.out.printf("Saldo R$ %.2f \n", super.getSaldo());
-			} 
-		}
-
-	/*public void debito (double valor)  // só vai ter debito se tiver saldo
-	{
-		if (this.getSaldo() >= valor) {
-			this.saldo = this.saldo - valor;
+				
+			}
 			
-		}
-		
-		if (this.saldo < valor) {
-			if (valor <= limite) {
-				System.out.println("Você está usando o limite da conta");
-				limite = limite - valor;
-			}
-			else
+			else if(super.getSaldo()== valor)
 			{
-				System.out.println("você não pode realizar essa tranferência, limite estourado! ");
-		
+				System.out.println("Seu saldo zerou... ");
+				double zerar = 0.00;
+				zerar = valor - super.getSaldo();
+				super.credito(zerar);
 			}
-		}
-	}*/
-		 
+		}*/
+		
 }//fim

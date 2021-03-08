@@ -9,7 +9,9 @@ public class Teste {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
-		
+		 String movimento [] = new String [10];
+		 int contador = 0 ;
+		 char continua; // loop das movimentações
 		//menu inicial da conta:
 		
 		//teste de usuario
@@ -32,13 +34,12 @@ public class Teste {
 				ativa = true;
 			}else {
 				ativa = false;
+				
 			}
-			
-		
-		final double limite = 1000;
-		ContaEspecial contaTeste = new ContaEspecial (numero,cpf,ativa,limite);
-		 double movimento [] = new double [2];
-		
+
+	
+		ContaEspecial contaTeste = new ContaEspecial (numero,cpf,ativa,1000.00);
+		 
 		
 		
 		
@@ -46,33 +47,60 @@ public class Teste {
 		
 		contaTeste.movimento();
 		
-		char continua; // loop das movimentações
+		
 		
 		do {
+		
 			double valor;
 			char opcao;
 			
-		
+			
 			System.out.println("Digite o valor: ");
 			valor = leia.nextDouble();
+		
 			System.out.println("[D-> DÉBITO] [C-> CRÉDITO] -> ");
 			opcao = leia.next().toUpperCase().charAt(0);
-				
+		
 				if (opcao == 'D') {
 					contaTeste.debito(valor);
+					System.out.printf("Débito: %.2f",valor);
+					movimento[contador] = "Debito " + valor;
+								
+					
 				} else if (opcao == 'C') {
-					contaTeste.credito(valor);
+					contaTeste.credito(valor);	
+					System.out.printf("Crédito: %.2f",valor);
+					movimento[contador] = "Crédito " + valor;
+					
 				}else {
 					System.out.println("Opção Invalida");
-				}
-			contaTeste.usarLimite(valor);
+					break;
+				}contador++;
+				
+			System.out.println();
 			System.out.println("Deseja continuar fazendo as transações? [S-> SIM] [N-> NÃO] ->");
 			continua = leia.next().toUpperCase().charAt(0);
-			}while (continua == 'S');
+			
+			
+			 if(contador == movimento.length)
+	    		{
+	    			System.out.println("                    [!!!!!ATENÇÃO!!!!!]                    ");
+	    			System.out.println("[Você utilizou todas as 10 transações disponiveis para sua conta]");
+	    			break;
+	    		}
+			}while (continua == 'S' && contador<10);
 		
 		//fim
+		
+		/*for (String movimentos : movimento) {
+			System.out.println("Os movimentos da conta especial: " + movimentos);
+		}*/
+		
+		
+		
 		System.out.println("Saldo atual da conta: " + contaTeste.getSaldo());
 		System.out.println("O valor do Limite atual: " + contaTeste.getLimite());
+		
 	}
 
 }
