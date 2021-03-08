@@ -43,7 +43,7 @@ public class ContaEspecial extends Conta {
 		System.out.println("Vamos começar a movimentação da Conta Especial!");
 		System.out.println("Você tem direito a 10 movimentações sendo interrompido quando zera o limite da sua conta!");
 		System.out.println();
-		System.out.println("seu saldo é:" + super.getSaldo());
+		System.out.println("seu saldo é: " + super.getSaldo());
 		System.out.println("Você tem o limite disponivel: " + this.limite);
 		System.out.println("Você pode: [D-> DÉBITO] [C-> CRÉDITO]: ");
 	}

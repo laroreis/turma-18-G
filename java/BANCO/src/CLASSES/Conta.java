@@ -2,10 +2,10 @@ package CLASSES;
 
 public class Conta {
 	//atributos segurança total
-	private int numero;
-	private String cpf;
+	protected int numero;
+	protected String cpf;
 	protected double saldo;
-	private boolean ativa;
+	protected boolean ativa;
 	
 	//contrutor mesmo nome da classe
 	public Conta(int numero, String cpf) {
