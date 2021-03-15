@@ -57,6 +57,6 @@ SELECT * FROM tb_produtos WHERE preco BETWEEN 20 AND 40;
 SELECT COUNT(*) FROM tb_produtos; -- quantidade de produtos cadastrados.
 SELECT SUM(preco)FROM tb_produtos; -- soma a tabela
 
-SELECT AVG(preco) AS media FROM tb_produtos;
+SELECT AVG(preco) AS media FROM tb_produtos; -- media
 
 -- drop table nomedatabela; -- deleta tabela
