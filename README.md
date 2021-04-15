@@ -15,9 +15,6 @@
  <a href="#-organizacao">Organização</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
  <a href="#-autora">Autora</a> • 
-<a href= "#-Portugol">Portugol</a> • 
- <a href="#-java">Java</a>  •
-<a href= "#-sql">Sql</a>
 </p>
  
  ## 📄 Sobre o Repositório
